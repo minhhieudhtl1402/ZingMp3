@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="music"
+            type="com.example.zingmp3.model.Music" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_item_music">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/audrey"
+            android:lines="2"
+            android:text='@{music.title,default="Phuong Linh"}'
+            android:textColor="@color/item_music_title"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/civ_music_avatar"
+            app:layout_constraintTop_toTopOf="@+id/civ_music_avatar" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_music_avatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/music_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/audrey"
+            android:text='@{music.singer,default="Krik"}'
+            android:textColor="@color/item_music_singer"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/civ_music_avatar"
+            app:layout_constraintStart_toEndOf="@+id/civ_music_avatar" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/baseline_more_vert_24"
+            app:layout_constraintBottom_toBottomOf="@+id/civ_music_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/civ_music_avatar" />
+
+        <TextView
+            android:id="@+id/tv_listen_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/audrey"
+            android:text='@{music.listenCount,default="9999"}'
+            android:textColor="@color/item_music_singer"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.776"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_title"
+            app:layout_constraintVertical_bias="0.8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
